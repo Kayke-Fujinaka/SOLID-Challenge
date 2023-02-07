@@ -31,7 +31,6 @@ class UsersRepository implements IUsersRepository {
 
     this.users.push(user);
 
-    console.log("usuários", this.users);
     return user;
   }
 
