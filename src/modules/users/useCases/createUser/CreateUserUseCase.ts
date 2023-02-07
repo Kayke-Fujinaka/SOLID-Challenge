@@ -9,8 +9,9 @@ interface IRequest {
 class CreateUserUseCase {
   constructor(private usersRepository: IUsersRepository) {}
 
-  execute({ email, name }: IRequest): User {
-    // Complete aqui
+  execute({ name, email }: IRequest): User {
+    if (!name && !email) throw new Error("Should have a name and an email!");
+    return this.usersRepository.create({ name, email });
   }
 }
 
