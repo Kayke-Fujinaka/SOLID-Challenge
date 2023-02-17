@@ -5,7 +5,7 @@ class User {
 
   name: string;
 
-  admin: boolean;
+  admin?: boolean;
 
   email: string;
 
@@ -14,13 +14,8 @@ class User {
   updated_at: Date;
 
   constructor() {
-    if (!this.id) {
-      this.id = uuidV4();
-    }
-
-    if (!this.admin) {
-      this.admin = false;
-    }
+    if (!this.id) this.id = uuidV4();
+    if (!this.admin) this.admin = false;
   }
 }
 
